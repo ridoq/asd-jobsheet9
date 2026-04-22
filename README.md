@@ -60,3 +60,21 @@
 ---
 
 #   Percobaan 2
+
+#   Soal
+
+1.	Jelaskan alur kerja dari method konversiDesimalKeBiner!
+2.	Pada method konversiDesimalKeBiner, ubah kondisi perulangan menjadi while (kode != 0), bagaimana hasilnya? Jelaskan alasannya!
+
+---
+#   Jawaban
+
+1.  Method ini bekerja dengan memanfaatkan prinsip LIFO (Last In First Out) dari Stack untuk membalik urutan sisa pembagian bilangan desimal menjadi urutan biner yang benar. Alurnya adalah:
+    -   Inisialisasi: Sebuah objek StackKonversi dibuat dengan kapasitas 32 bit.
+    -   Proses Pembagian (Looping 1): Bilangan desimal (parameter nilai) dibagi dengan 2 secara terus-menerus selama nilai tersebut lebih besar dari 0.
+    -   Penyimpanan Sisa: Hasil sisa bagi (nilai % 2) dimasukkan (push) ke dalam stack. Sisa bagi pertama yang masuk sebenarnya adalah digit biner paling belakang (LSB), sehingga harus disimpan di paling bawah stack agar bisa dikeluarkan terakhir.
+    -   Penyusunan Biner (Looping 2): Selama stack tidak kosong, elemen diambil (pop) satu per satu dan digabungkan ke dalam sebuah String.
+    -   Hasil: Karena stack mengeluarkan data yang terakhir masuk lebih dulu, urutan biner yang dihasilkan menjadi benar (digit biner paling depan atau MSB muncul pertama)
+2.  hasilnya kurang lebih sama, namun ada sedikit perbedaan yaitu kode ini bisa digunakan untuk memberikan nilai negatif, namun secara logika nilai negatif itu tidak ada, opini pribadiku sebaiknya menggunakan nilai > 0 aja
+
+---
