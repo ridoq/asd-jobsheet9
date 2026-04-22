@@ -1,5 +1,7 @@
 package Percobaan1;
 
+import Percobaan2.StackKonversi23;
+
 public class StackTugasMahasiswa23 {
     Mahasiswa23[] stack;
     int top, size;
@@ -75,5 +77,20 @@ public class StackTugasMahasiswa23 {
 
     public int count() {
         return top + 1;
+    }
+
+    public String konversiDesimalKeBiner(int nilai) {
+        StackKonversi23 stack = new StackKonversi23();
+        while (nilai > 0) {
+            int sisa = nilai % 2;
+            stack.push(sisa);
+            nilai = nilai / 2;
+        }
+        
+        String biner = new String();
+        while (!stack.isEmpty()) {
+            biner += stack.pop();
+        }
+        return biner;
     }
 }
